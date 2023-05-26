@@ -93,13 +93,15 @@ const TypingMaster = () => {
       <h1>Typing Master</h1>
       <div className={styles.keyboardKeys}>{keyboardKeys}</div>
       <input type="text" value={text} ref= {inputRef} className={styles.keyboardInput}
-       onChange={handleInputChange} disabled={endTime !== null || text.length==keyboardKeys.length} 
+       onChange={handleInputChange} disabled={endTime !== null } 
        placeholder='Type Here'/>
       <p>
         No. of keys pressed: {score}
       </p>
+      {/* <p>Speed : {Math.floor((+score/5 )/1)} WPM</p> */}
       {endTime ? (
-        <p>Accuracy: {accuracy}%</p>
+        <p>Speed : {Math.floor((+score/5 )/1)} WPM  {  '||' } Accuracy: {accuracy}%</p> 
+        
       ) : (
         <p>Time Remaining: {formatTime()}</p>
       )}
