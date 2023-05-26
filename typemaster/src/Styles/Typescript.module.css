@@ -7,6 +7,8 @@ p{
     font-weight: bold;
     font-size: 25px;
 }
+
+/* this is the given text  css here*/
 .keyboardKeys{
     max-width:620px;
     border: 1px solid black;
@@ -24,6 +26,7 @@ p{
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+/* this is for the input box */
 input{
     max-width: 400px;
     height: 50px;
@@ -33,6 +36,8 @@ input{
     font-size: 25px;
 }
 
+
+/*This is the restart button   */
 button{
     width: 200px;
     height: 70px;
@@ -47,7 +52,4 @@ button{
 button:hover{
     background-color: aqua;
     cursor: pointer;
-}
-div>span{
-    background-color: brown;
 }

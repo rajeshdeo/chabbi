@@ -11,9 +11,11 @@ const TypingMaster = () => {
   const [timer, setTimer] = useState(30);
   const [accuracy, setAccuracy] = useState(0);
 
-        const inputRef= useRef(null);
 
-  const keyboardKeys = 'asdfjkl;';
+  //It is used for input focus
+  const inputRef= useRef(null);
+
+  const keyboardKeys = 'asdfjkldnf;';
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
@@ -22,6 +24,8 @@ const TypingMaster = () => {
     };
   }, []);
 
+
+  //handling timer function and side effects here
   useEffect(() => {
     if (timer > 0) {
       const countdown = setInterval(() => {
@@ -51,6 +55,8 @@ const TypingMaster = () => {
     }
   };
 
+
+//Use Restart function here
   const handleRestart = () => {
     setText('');
     setCurrentIndex(0);
@@ -75,11 +81,11 @@ const TypingMaster = () => {
 //    console.log(event.target.value)
     setText(event.target.value);
     setScore(event.target.value.length)
-    keyboardKeys.split("").forEach((el,index)=>{
-        <div key={el.id}>
-            <span>{el}</span>
-        </div>
-    })
+    // keyboardKeys.split("").forEach((el,index)=>{
+    //     <div key={el.id}>
+    //         <span>{el}</span>
+    //     </div>
+    // })
   };
 
   const formatTime = () => {
