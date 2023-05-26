@@ -46,7 +46,7 @@ const TypingMaster = () => {
       if (currentIndex === keyboardKeys.length - 1) {
         setEndTime(Date.now());
       }
-      setScore(score + 1);
+    //   setScore(score + 1);
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -63,14 +63,23 @@ const TypingMaster = () => {
 
   const calculateAccuracy = () => {
     const typedKeys = text.slice(0, keyboardKeys.length);
-    console.log(typedKeys);
+     console.log(typedKeys);
+    
     const matchedKeys = typedKeys.split('').filter((key, index) => key === keyboardKeys[index]);
     const accuracyPercentage = (matchedKeys.length / keyboardKeys.length) * 100;
     setAccuracy(accuracyPercentage.toFixed(2));
   };
 
   const handleInputChange = (event) => {
+//    console.log( keyboardKeys.split(""))
+//    console.log(event.target.value)
     setText(event.target.value);
+    setScore(event.target.value.length)
+    keyboardKeys.split("").forEach((el,index)=>{
+        <div key={el.id}>
+            <span>{el}</span>
+        </div>
+    })
   };
 
   const formatTime = () => {
@@ -84,10 +93,10 @@ const TypingMaster = () => {
       <h1>Typing Master</h1>
       <div className={styles.keyboardKeys}>{keyboardKeys}</div>
       <input type="text" value={text} ref= {inputRef} className={styles.keyboardInput}
-       onChange={handleInputChange} disabled={endTime !== null} 
+       onChange={handleInputChange} disabled={endTime !== null || text.length==keyboardKeys.length} 
        placeholder='Type Here'/>
       <p>
-        Score: {score}/{keyboardKeys.length}
+        No. of keys pressed: {score}
       </p>
       {endTime ? (
         <p>Accuracy: {accuracy}%</p>

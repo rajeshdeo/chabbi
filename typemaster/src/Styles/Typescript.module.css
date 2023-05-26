@@ -2,11 +2,12 @@ body{
     background-color: rgb(85,197,255);
 }
 
-.keyboardKeys, .keyboardInput{
+.keyboardKeys{
     max-width:620px;
     border: 1px solid black;
     margin: auto;
-    max-height: 80px;
+    padding: 10px;
+    /* max-height: 80px; */
     font-size: 35px;
     /* word-spacing: 5px; */
     display: flex;
@@ -17,7 +18,14 @@ body{
     border-radius: 10px;
     border: none;
 }
-.keyboardInput{
+input{
+    width: 400px;
+    height: 50px;
+   
     margin-top: 50px;
-    border-radius: 0px;
+    
+    font-size: 25px;
+}
+div>span{
+    background-color: brown;
 }
