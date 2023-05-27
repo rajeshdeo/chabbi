@@ -1,6 +1,6 @@
 import React, { useState, useEffect , useRef} from 'react';
  
-import styles from "../Styles/Typescript.module.css"
+import styles from "../Styles/Typemaster.module.css"
 
 const TypingMaster = () => {
   const [text, setText] = useState('');
@@ -69,7 +69,7 @@ const TypingMaster = () => {
 
   const calculateAccuracy = () => {
     const typedKeys = text.slice(0, keyboardKeys.length);
-     console.log(typedKeys);
+    //  console.log(typedKeys);
     
     const matchedKeys = typedKeys.split('').filter((key, index) => key === keyboardKeys[index]);
     const accuracyPercentage = (matchedKeys.length / keyboardKeys.length) * 100;
@@ -81,11 +81,7 @@ const TypingMaster = () => {
 //    console.log(event.target.value)
     setText(event.target.value);
     setScore(event.target.value.length)
-    // keyboardKeys.split("").forEach((el,index)=>{
-    //     <div key={el.id}>
-    //         <span>{el}</span>
-    //     </div>
-    // })
+    
   };
 
   const formatTime = () => {
@@ -95,7 +91,7 @@ const TypingMaster = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Typing Master</h1>
       <div className={styles.keyboardKeys}>{keyboardKeys}</div>
       <input type="text" value={text} ref= {inputRef} className={styles.keyboardInput}
