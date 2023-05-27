@@ -56,7 +56,7 @@ const TypingMaster = () => {
   };
 
 
-//Use Restart function here
+//Using Restart function here
   const handleRestart = () => {
     setText('');
     setCurrentIndex(0);
@@ -67,6 +67,7 @@ const TypingMaster = () => {
     setAccuracy(0);
   };
 
+  //Calculate accuracy section
   const calculateAccuracy = () => {
     const typedKeys = text.slice(0, keyboardKeys.length);
     //  console.log(typedKeys);
@@ -107,6 +108,7 @@ const TypingMaster = () => {
       ) : (
         <p>Time Remaining: {formatTime()}</p>
       )}
+      
       <button onClick={handleRestart}>Restart</button>
     </div>
   );
