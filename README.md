@@ -27,7 +27,7 @@ HTML, CSS, JS, React js, React hooks.
 6) Responsive in nature.
 
 
-## Project link : https://super-cajeta-193f93.netlify.app
+## Project link : https://64734f78c137bd30afd89496--calm-froyo-f021f9.netlify.app/
 <!-- <h3>Live Demo Link https://attryb-buycars.vercel.app </h3> -->
 
 ## Creator:
