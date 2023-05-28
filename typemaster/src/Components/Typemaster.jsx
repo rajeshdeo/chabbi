@@ -1,6 +1,10 @@
 import React, { useState, useEffect , useRef} from 'react';
  
 import styles from "../Styles/Typemaster.module.css"
+import {  useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { logout } from '../Reducer/authActions';
 
 const TypingMaster = () => {
   const [text, setText] = useState('');
@@ -10,10 +14,13 @@ const TypingMaster = () => {
   const [endTime, setEndTime] = useState(null);
   const [timer, setTimer] = useState(30);
   const [accuracy, setAccuracy] = useState(0);
-
-
+  const navigate = useNavigate();
+  const user= useSelector((store)=>store)
+  
+  console.log(user)
   //It is used for input focus
   const inputRef= useRef(null);
+  const dispatch= useDispatch();
 
   const keyboardKeys = 'asdfjkldnf;';
 
@@ -91,8 +98,41 @@ const TypingMaster = () => {
     return `${minutes} min :${seconds} sec`;
   };
 
+  const handleLogin =()=>{
+    navigate("/login")
+    
+  }
+
+  const handleLogout =()=>{
+    dispatch(logout())
+  }
   return (
+    <div>
+      <div id='navbar' className={styles.navbar}>
+        <button id='buttonLogo' onClick={()=>{
+          navigate("/")
+        }}>
+          Home
+        </button>
+
+        {/* <button className='logout' onClick={handleLogin}>
+            Login
+          </button> */}
+        {
+          user.isLoggedIn===false?
+          <button className='logout' onClick={handleLogin}>
+            Login
+          </button>
+           : <div className={styles.logoDiv}>
+           <h1>Welcome ! </h1>
+           <button className='logout' onClick={handleLogout}>Logout</button>
+           </div> 
+        }
+         
+       
+      </div>
     <div className={styles.container}>
+      
       <h1>Typing Master</h1>
       <div className={styles.keyboardKeys}>{keyboardKeys}</div>
       <input type="text" value={text} ref= {inputRef} className={styles.keyboardInput}
@@ -111,6 +151,7 @@ const TypingMaster = () => {
       
       <button onClick={handleRestart}>Restart</button>
     </div>
+  </div>
   );
 };
 

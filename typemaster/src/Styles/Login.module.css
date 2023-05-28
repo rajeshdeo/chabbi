@@ -1,0 +1,17 @@
+.login{
+    max-width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    padding: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-bottom-left-radius:120px;
+    border-top-right-radius:120px;
+    background-color: rgb(85,197,255);
+}
+input+div{
+margin-top: 20px;
+}
+button{
+    margin-top: 20px;
+}

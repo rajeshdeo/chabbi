@@ -12,10 +12,25 @@ h1{
 }
 /*Main container  */
 
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    height: 120px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.logoDiv{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .container{
     max-width: 40%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     /* border: 1px solid red; */
     padding: 50px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;

@@ -1,11 +1,13 @@
 
 import './App.css';
-import TypingMaster from './Components/Typemaster';
+import AllRoutes from './Components/AllRoutes';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <div className="App">
-     <TypingMaster />
+      {/* <Navbar /> */}
+      <AllRoutes />
     </div>
   );
 }
