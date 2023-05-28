@@ -12,7 +12,7 @@ const TypingMaster = () => {
   const [score, setScore] = useState(0);
   const [startTime, setStartTime] = useState(null);
   const [endTime, setEndTime] = useState(null);
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(300);
   const [accuracy, setAccuracy] = useState(0);
   const navigate = useNavigate();
   const user= useSelector((store)=>store)
@@ -70,7 +70,7 @@ const TypingMaster = () => {
     setScore(0);
     setStartTime(null);
     setEndTime(null);
-    setTimer(30);
+    setTimer(300);
     setAccuracy(0);
   };
 
